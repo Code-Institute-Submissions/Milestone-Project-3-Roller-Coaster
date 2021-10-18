@@ -9,11 +9,40 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     {% block styles %}
     {% endblock %}
-    <title>Task Manager</title>
     <title>Roller Pro</title>
 </head>
 <body>
     
+    <header>
+        <nav class="nav-extended text-shadow light-blue darken-1">
+            <div class="nav-wrapper">
+              <a href="#!" class="brand-logo">Roller Pro</a>
+              <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+              <ul class="right hide-on-med-and-down">
+                <li><a href="{{ url_for('get_terms') }}">Home</a></li>
+					<li><a href="#">Profile</a></li>
+					<li><a href="#">Change Words</a></li>
+					<li><a href="#">Manage Words</a></li>
+					<li><a href="#">Log Out</a></li>
+					<li><a href="#">Log In</a></li>
+					<li><a href="#">Register</a></li>
+              </ul>
+            </div>
+          </nav>
+        
+          <ul class="sidenav" id="mobile-demo">
+            <li><h4 class="center-align light-blue-text text-darken 4">Roller Pro</h4></li>
+            <li><a href="{{ url_for('get_terms') }}">Home</a></li>
+					<li><a href="#">Profile</a></li>
+					<li><a href="#">Change Words</a></li>
+					<li><a href="#">Manage Words</a></li>
+					<li><a href="#">Log Out</a></li>
+					<li><a href="#">Log In</a></li>
+					<li><a href="#">Register</a></li>
+          </ul>
+    </header>
+
+
     {% block content %}
     {% endblock %}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
