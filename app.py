@@ -93,9 +93,22 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/add_term")
+@app.route("/add_term", methods=["GET", "POST"])
 def add_term():
-    return render_template("add_term.html")
+    if request.method == "POST":
+        term = {
+            "add_term": request.form.get("add_term"),
+            "add_meaning": request.form.get("add_meaning"),
+            "created_by": session["user"]
+        }
+        mongo.db.terms.insert_one(term)
+        flash("Term Successfully Added")
+        return redirect(url_for("get_terms"))
+
+
+    add_term = mongo.db.add_term.find().sort("add_term", 1)
+    return render_template("add_term.html", add_term=add_term)
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
