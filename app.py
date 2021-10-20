@@ -97,8 +97,9 @@ def logout():
 def add_term():
     if request.method == "POST":
         term = {
-            "add_term": request.form.get("add_term"),
-            "add_meaning": request.form.get("add_meaning"),
+            "term": request.form.get("add_term"),
+            "meaning": request.form.get("add_meaning"),
+            "letter": request.form.get("add_letter"),
             "created_by": session["user"]
         }
         mongo.db.terms.insert_one(term)
