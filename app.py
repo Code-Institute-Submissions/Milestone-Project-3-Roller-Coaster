@@ -110,7 +110,15 @@ def add_term():
     return render_template("add_term.html", add_term=add_term)
 
 
+@app.route("/edit_term/<term_id>", methods=["GET", "POST"])
+def edit_term(term_id):
+    term = mongo.db.terms.find_one({"_id": ObjectId(term_id)})
+    add_term = mongo.db.add_term.find().sort("add_term", 1)
+    return render_template("edit_term.html", term=term, add_term=add_term)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=True)
+            
