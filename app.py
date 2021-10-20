@@ -49,8 +49,7 @@ def register():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
-    if request.method == "POST":
-        
+    if request.method == "POST":    
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
@@ -86,6 +85,7 @@ def profile(username):
 
     return redirect(url_for("login"))
 
+
 @app.route("/logout")
 def logout():
     flash("You have been logged out")
@@ -106,13 +106,22 @@ def add_term():
         flash("Term Successfully Added")
         return redirect(url_for("get_terms"))
 
-
     add_term = mongo.db.add_term.find().sort("add_term", 1)
     return render_template("add_term.html", add_term=add_term)
 
 
 @app.route("/edit_term/<term_id>", methods=["GET", "POST"])
 def edit_term(term_id):
+    if request.method == "POST":
+        submit = {
+            "term": request.form.get("add_term"),
+            "meaning": request.form.get("add_meaning"),
+            "letter": request.form.get("add_letter"),
+            "created_by": session["user"]
+        }
+        mongo.db.tasks.update({"_id": ObjectId(term_id)}, submit)
+        flash("Term Successfully Updated")
+        
     term = mongo.db.terms.find_one({"_id": ObjectId(term_id)})
     add_term = mongo.db.add_term.find().sort("add_term", 1)
     return render_template("edit_term.html", term=term, add_term=add_term)
