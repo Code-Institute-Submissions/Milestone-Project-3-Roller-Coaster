@@ -126,6 +126,12 @@ def edit_term(term_id):
     add_term = mongo.db.add_term.find().sort("add_term", 1)
     return render_template("edit_term.html", term=term, add_term=add_term)
 
+@app.route("/delete_term/<term_id>")
+def delete_term(term_id):
+    mongo.db.terms.remove({"_id": ObjectId(term_id)})
+    flash("Term Successfully Deleted")
+    return redirect(url_for("get_terms"))
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
