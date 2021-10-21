@@ -23,7 +23,6 @@ mongo = PyMongo(app)
 def get_terms():
     terms = list(mongo.db.terms.find())
     return render_template("terms.html", terms=terms)
-    
 
 
 @app.route("/search", methods=["GET", "POST"])
@@ -57,12 +56,12 @@ def register():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
-    if request.method == "POST":    
+    if request.method == "POST":
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            
+
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
                         session["user"] = request.form.get("username").lower()
@@ -71,12 +70,12 @@ def login():
                         return redirect(url_for(
                             "profile", username=session["user"]))
             else:
-                
+
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
 
         else:
-            
+
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
 
@@ -129,7 +128,7 @@ def edit_term(term_id):
         }
         mongo.db.terms.update({"_id": ObjectId(term_id)}, submit)
         flash("Term Successfully Updated")
-        
+
     term = mongo.db.terms.find_one({"_id": ObjectId(term_id)})
     add_term = mongo.db.add_term.find().sort("add_term", 1)
     return render_template("edit_term.html", term=term, add_term=add_term)
