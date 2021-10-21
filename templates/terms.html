@@ -3,6 +3,24 @@
 
     <h3 class="light-blue-text text-darken-4 center-align">All Terms</h3>
 
+    <div class="row card-panel grey lighten-5">
+        <form action="{{ url_for('search') }}" method="post" class="col s12">
+            <div class="row valign-wrapper center-align">
+                <div class="input-field col s12 m8">
+                    <i class="fas fa-search prefix light-blue-text text-darken-4"></i>
+                    <input type="text" name="query" id="query" minlength="1" class="validate" required>
+                    <label for="query">Search Terms</label>
+                </div>
+                <div class="col s12 m4">
+                    <a href="{{ url_for('get_terms') }}" class="red btn text-shadow">Reset</a>
+                    <button type="submit" class="light-blue darken-1 btn text-shadow">
+                        <i class="fas fa-search left"></i> Search
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    {% if terms|length > 0 %}
     <ul class="collapsible">
             {% for term in terms %}
             <li>
@@ -14,17 +32,20 @@
                         <a href="{{ url_for('edit_term', term_id=term._id) }}" class="btn-small light-blue lighten-1">Edit</a>
                         {% endif %}
                     </div>
-                        <div class="col s9">
-                            <strong>{{ term.letter }}</strong>
-                        </div>
+                    <div class="col s9">
+                        <strong>{{ term.letter }}</strong>
+                    </div>
+                </div>
                         <div class="collapsible-body">
                             <strong>{{ term.term }}</strong>
                             <p>{{ term.meaning }}</p>
                             <p><em>by: {{ term.created_by }}</em></p> 
                         </div>
-                </div>
             </li>
             {% endfor %} 
     </ul>
-                
+    {% else %}
+    <h3 class="red-text text-darken-4 center-align">No Results Found</h3>
+{% endif %}
+           
 {% endblock %}

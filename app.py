@@ -25,6 +25,13 @@ def get_terms():
     return render_template("terms.html", terms=terms)
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    terms = list(mongo.db.terms.find({"$text": {"$search": query}}))
+    return render_template("terms.html", terms=terms)
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -126,6 +133,7 @@ def edit_term(term_id):
     add_term = mongo.db.add_term.find().sort("add_term", 1)
     return render_template("edit_term.html", term=term, add_term=add_term)
 
+
 @app.route("/delete_term/<term_id>")
 def delete_term(term_id):
     mongo.db.terms.remove({"_id": ObjectId(term_id)})
@@ -137,4 +145,3 @@ if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=True)
-            
