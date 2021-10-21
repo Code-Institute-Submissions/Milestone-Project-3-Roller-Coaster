@@ -119,7 +119,7 @@ def edit_term(term_id):
             "letter": request.form.get("add_letter"),
             "created_by": session["user"]
         }
-        mongo.db.tasks.update({"_id": ObjectId(term_id)}, submit)
+        mongo.db.terms.update({"_id": ObjectId(term_id)}, submit)
         flash("Term Successfully Updated")
         
     term = mongo.db.terms.find_one({"_id": ObjectId(term_id)})
