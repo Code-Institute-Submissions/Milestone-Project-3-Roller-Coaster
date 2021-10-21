@@ -23,6 +23,7 @@ mongo = PyMongo(app)
 def get_terms():
     terms = list(mongo.db.terms.find())
     return render_template("terms.html", terms=terms)
+    
 
 
 @app.route("/search", methods=["GET", "POST"])
