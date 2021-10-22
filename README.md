@@ -17,8 +17,8 @@ This is a site where both roller coaster fans and those who have a casual intere
 
 
 ### Wireframes
-[Desktop Home]()
-[Smart Phone Home]()
+[Desktop Home](https://github.com/NC-CSX/Milestone-Project-3-Roller-Coaster/blob/main/static/assets/Wireframes/Desktop.png)
+[Smart Phone Home](https://github.com/NC-CSX/Milestone-Project-3-Roller-Coaster/blob/main/static/assets/Wireframes/Smart%20Phone.png)
 
 
 ## Technologies used
@@ -63,11 +63,13 @@ This is a site where both roller coaster fans and those who have a casual intere
 #### Screenshots
 
 Taken using the website Am I responsive
-[Screenshot]()
+[Screenshot](https://github.com/NC-CSX/Milestone-Project-3-Roller-Coaster/blob/main/static/assets/screenshots/rollerPro.JPG)
+[Desktop Home Page](https://github.com/NC-CSX/Milestone-Project-3-Roller-Coaster/blob/main/static/assets/screenshots/Desktop-terms.JPG)
+[Smart Phone Home Page](https://github.com/NC-CSX/Milestone-Project-3-Roller-Coaster/blob/main/static/assets/screenshots/Smartphone%20terms.jpg)
 
 #### Lighthouse reports
-* [terms.html]()
-* [login.html]()
+* [terms.html](https://github.com/NC-CSX/Milestone-Project-3-Roller-Coaster/blob/main/static/assets/Lighthouse%20reports/Lighthouse-report-all-terms.JPG)
+* [login.html](https://github.com/NC-CSX/Milestone-Project-3-Roller-Coaster/blob/main/static/assets/Lighthouse%20reports/Lighthouse-report-log-in.JPG)
 
 ## Deployment
 The project was deployed to Heroku using the following steps...
@@ -76,6 +78,7 @@ The project was deployed to Heroku using the following steps...
 
 1. In Gitpod run
     pip3 freeze --local > requirements txt
+    
     This create a requirements.txt file containing project dependencies.
 
 2. Save the file.
@@ -83,42 +86,43 @@ The project was deployed to Heroku using the following steps...
 3. Create a new file called Procfile 
 
 4. Open the Procfile. Inside the file, enter:
+   
    web: python3 app.py
 
-6. Save the file.
+5. Save the file.
 
-7. On Heroku, sign in using your username and password.
+6. On Heroku, sign in using your username and password.
 
-8. On Heroku Dashboard, press the "New" button, then select "Create new app".
+6. On Heroku Dashboard, press the "New" button, then select "Create new app".
 
-9. Enter the app name (note: name must be unique!) and select your region.
+8. Enter the app name (note: name must be unique!) and select your region.
 
-10. Press "Create app".
+9. Press "Create app".
 
-11. Go to Settings and click on Github under deployment method
+10. Go to Settings and click on Github under deployment method
 
-12. Add your repository name then click 'Search'. Once it finds your repo, click to connect to this app.
+13. Add your repository name then click 'Search'. Once it finds your repo, click to connect to this app.
 
-13. On Heroku App Dashboard, select the Settings tab.
+14. On Heroku App Dashboard, select the Settings tab.
 
-14. Click on the 'Settings' for your app, and then click on 'Reveal Config Vars'
+15. Click on the 'Settings' for your app, and then click on 'Reveal Config Vars'
 
-15. Add the following variables: 
+16. Add the following variables: 
 * IP: 0.0.0.0. 
 * PORT 5000.
 * SECRET_KEY, copy that from the env.py file, then paste it into Heroku.
 * If you have MONGO_URI string fill it in, if not leave it blank.
 * Add MONGO_DBNAME, this is the name of your database
 
-16. Go back to Githjub and Add the requirements file.
+17. Go back to Githjub and Add the requirements file.
 
-17. Then commit the file
+18. Then commit the file
 
-18. Add the Procfile
+19. Add the Procfile
 
-19. Then commit the Procfile
+20. Then commit the Procfile
 
-20. Then push in order to update GitHub.
+21. Then push in order to update GitHub.
 
 21. Go to Heroku and now enable 'Enable Automatic Deployment'
 
