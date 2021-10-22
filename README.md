@@ -4,7 +4,7 @@ This is a site where both roller coaster fans and those who have a casual intere
 
 ## User Experience
 * Users can create an account.
-* Users can edit edit, delete and add new terms to the database
+* Users can edit edit, delete and add new terms to the database.
 * Users can learn about common terms used to describe rollercoasters.
 
 
@@ -42,13 +42,27 @@ This is a site where both roller coaster fans and those who have a casual intere
 
 6. [MongoDB](https://www.mongodb.com/) Used as a database
 
-7. [Pep8](PEP8 online) Used to see if Python code was PEP 8 Compliant
+7. [Pep8](http://pep8online.com/) Used to see if Python code was PEP 8 Compliant
 
 ## Testing
 * The code was inputted through the W3C CSS Validation Service, Markup Validation Service and JSHint and no errors were found.
-* Python was ran through Pep8 validator and no issus were found.  
-* Lighthouse reports were created.
-* Testing was done at each stage to ensure that the database could be mainipulated.
+* Python code was ran through Pep8 validator and no issus were found.  
+* Lighthouse reports were created and scored over 90 on all areas that were tested.
+* Testing was done at each stage to ensure that the database could be manipulated.
+
+* User Story testing
+1. Can a user create an account?
+* Users are able to successfully create an account. For testing I created 3 different accounts usernames were: crazym, dave15 and admin.
+
+2. Can users add terms to the database?
+* Users are able to add terms in the database. To test this I created fake entries to the database and they appeared on the site.
+
+3. Can users edit terms
+* Users are able to edit the terms in the database. To test this I edited the fake entries.
+
+4. Can users delete terms?
+* Users are able to delete terms. In the database you cannot see any fake entries.
+
 * User dave15 was me testing that I can create, update and delete entries.
 * The website was tested on Google Chrome, Edge and  Firefox using the deployed link.
 * The website was also tested on Samsung Tab S7 and Samsung S20 Ultra. 
@@ -57,15 +71,12 @@ This is a site where both roller coaster fans and those who have a casual intere
 ## Bugs in Testing
 * Database terms were not appearing in the site when they were edited.
   This was resolved by changing the field to match the terms.  
-* When searching by letter, you cannot search for A as Mongo does not allow search terms for A on its own.
-
+* When searching by letter, you cannot search for A as Mongo does not allow search terms for A on its own as it is a very common term.
 
 #### Screenshots
-
-Taken using the website Am I responsive
-[Screenshot](https://github.com/NC-CSX/Milestone-Project-3-Roller-Coaster/blob/main/static/assets/screenshots/rollerPro.JPG)
-[Desktop Home Page](https://github.com/NC-CSX/Milestone-Project-3-Roller-Coaster/blob/main/static/assets/screenshots/Desktop-terms.JPG)
-[Smart Phone Home Page](https://github.com/NC-CSX/Milestone-Project-3-Roller-Coaster/blob/main/static/assets/screenshots/Smartphone%20terms.jpg)
+* [Screenshot taken using the website "Am I responsive"](https://github.com/NC-CSX/Milestone-Project-3-Roller-Coaster/blob/main/static/assets/screenshots/rollerPro.JPG)
+* [Desktop Home Page](https://github.com/NC-CSX/Milestone-Project-3-Roller-Coaster/blob/main/static/assets/screenshots/Desktop-terms.JPG)
+* [Smart Phone Home Page](https://github.com/NC-CSX/Milestone-Project-3-Roller-Coaster/blob/main/static/assets/screenshots/Smartphone%20terms.jpg)
 
 #### Lighthouse reports
 * [terms.html](https://github.com/NC-CSX/Milestone-Project-3-Roller-Coaster/blob/main/static/assets/Lighthouse%20reports/Lighthouse-report-all-terms.JPG)
