@@ -1,19 +1,18 @@
 # Roller Pro Database
 
-This is a site where both roller coaster fans and those who have a casual interest in rollercoasters can create a new dictionary of words The aim of the site is to create a databse of terms that are common to hear when discussing rollercoasters for both ethusaisnts and non ethusiasts. Scope of terms is limited to rollercoasters as these are the most common rides in a theme park.
+This is a site where both roller coaster fans and those who have a casual interest in roller coasters can create a new dictionary of words The aim of the site is to create a database of terms that are common to hear when discussing roller coasters for both enthusiasts and non enthusiasts . Scope of terms is limited to roller coasters as these are the most common rides in a theme park.
 
 ## User Experience
 * Users can create an account.
 * Users can edit edit, delete and add new terms to the database.
-* Users can learn about common terms used to describe rollercoasters.
-
+* Users can learn about common terms used to describe roller coasters.
 
 * Features to implement
 1. Adding comments and star ratings to the terms so users can help to improve them.
 2. Adding the functionality to add images to the terms. This will help users visualise the element described.
 3. Create a forum where users can meet to discuss aspects of coasters and share news.
-4. Link the database to YouTube and offical theme park links. The aim is to increase awareness of the parks and rides.
-5. On a user's profile show them the terms they have created. Users can see the words they have created on the home page after they log in.
+4. Link the database to YouTube and official theme park links. The aim is to increase awareness of the parks and rides.
+5. On a user's profile show them the terms they have created, and add the functionality to add an photo of themselves. Currently Users can see the words they have created on the home page after they log in.
 
 
 ### Wireframes
