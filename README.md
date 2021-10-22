@@ -88,6 +88,7 @@ The project was deployed to Heroku using the following steps...
 The following procedure was used for deployment on Heroku: This assumes that you already have created your MongoDB database
 
 1. In Gitpod run
+
     pip3 freeze --local > requirements txt
     
     This creates a requirements.txt file containing project dependencies.
@@ -121,9 +122,9 @@ The following procedure was used for deployment on Heroku: This assumes that you
 16. Add the following variables: 
 * IP: 0.0.0.0. 
 * PORT 5000.
-* SECRET_KEY: Copy this from the env.py file, then paste it into Heroku.
-* MONGO_URI: If you already have a string fill it in, if not leave it blank.
-* MONGO_DBNAME: Add the name of your database.
+* SECRET_KEY, Copy this from the env.py file, then paste it into Heroku.
+* MONGO_URI, If you already have a string fill it in, if not leave it blank.
+* MONGO_DBNAME, Add the name of your database.
 
 17. Go back to Gitpod and add the requirements file.
 
