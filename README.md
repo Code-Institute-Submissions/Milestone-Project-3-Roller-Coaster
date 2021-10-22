@@ -105,7 +105,7 @@ The following procedure was used for deployment on Heroku: This assumes that you
 
 6. On Heroku, sign in using your username and password.
 
-6. On the Heroku Dashboard, click on New, then select Create new app.
+7. On the Heroku Dashboard, click on New, then select Create new app.
 
 8. Enter the app name, this name must be unique, and select your region.
 
@@ -113,34 +113,34 @@ The following procedure was used for deployment on Heroku: This assumes that you
 
 10. Go to Settings and click on Github under deployment method.
 
-13. Add your Github repository name, click Search. When your repository is found, click to connect to this app.
+11. Add your Github repository name, click Search. When your repository is found, click to connect to this app.
 
-14. On the Heroku Dashboard, select Settings.
+12. On the Heroku Dashboard, select Settings.
 
-15. Click on Reveal Config Vars
+13. Click on Reveal Config Vars
 
-16. Add the following variables: 
+14. Add the following variables: 
 * IP: 0.0.0.0. 
 * PORT 5000.
 * SECRET_KEY, Copy this from the env.py file, then paste it into Heroku.
 * MONGO_URI, If you already have a string fill it in, if not leave it blank.
 * MONGO_DBNAME, Add the name of your database.
 
-17. Go back to Gitpod and add the requirements file.
+15. Go back to Gitpod and add the requirements file.
 
-18. Then commit the file.
+16. Then commit the file.
 
-19. Add the Procfile.
+17. Add the Procfile.
 
-20. Then commit the Procfile.
+18. Then commit the Procfile.
 
-21. Then push in order to update GitHub.
+19. Then push in order to update GitHub.
 
-21. Go to Heroku and now enable Enable Automatic Deployment.
+20. Go to Heroku and now enable Enable Automatic Deployment.
 
-22. Click Deploy Branch.
+21. Click Deploy Branch.
 
-23. Click "View" to launch your new app.
+22. Click "View" to launch your new app.
 
 * The Link to the application is -(https://niall-project-roller-coaster.herokuapp.com/)
 
